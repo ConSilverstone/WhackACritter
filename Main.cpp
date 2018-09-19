@@ -1,4 +1,11 @@
+//-----------------
+// Includes
+// ----------------
+// Libraries
 #include <SFML/Graphics.hpp>
+
+// Project Includes
+#include "Critter.h"
 
 int main()
 {
@@ -14,6 +21,12 @@ int main()
 	// Timer functionality
 	sf::Clock gameClock;
 
+	// Create an instance of our Critter class
+	Critter myCritter;
+
+	// End of Game Setup
+
+
 	while (gameWindow.isOpen())
 	{
 		sf::Event event;
@@ -23,7 +36,7 @@ int main()
 				gameWindow.close();
 		}
 
-		// -----------------
+		// ------------------
 		// Draw
 		// ------------------
 
@@ -31,6 +44,7 @@ int main()
 		gameWindow.clear(sf::Color::Blue);
 
 		// Draw everything
+		myCritter.Draw(gameWindow);
 
 		//Display the window contents of the screen
 		gameWindow.display();
