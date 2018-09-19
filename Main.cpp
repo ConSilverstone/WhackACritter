@@ -28,10 +28,9 @@ int main()
 		// ------------------
 
 		// Clear the window to a single colour
-		gameWindow.clear();
+		gameWindow.clear(sf::Color::Blue);
 
 		// Draw everything
-		gameWindow.draw(shape);
 
 		//Display the window contents of the screen
 		gameWindow.display();
