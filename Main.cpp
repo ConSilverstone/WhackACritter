@@ -3,6 +3,8 @@
 // ----------------
 // Libraries
 #include <SFML/Graphics.hpp>
+#include <cstdlib> // Gives access to random funct
+#include <ctime> // Gives access to time funct
 
 // Project Includes
 #include "Critter.h"
@@ -17,6 +19,9 @@ int main()
 	sf::RenderWindow gameWindow;
 	gameWindow.create(sf::VideoMode::getDesktopMode(), "Whack A Critter!",
 	sf::Style::Titlebar | sf::Style::Close);
+
+	//Seed our random number generation
+	srand(time(NULL));
 
 	// Timer functionality
 	sf::Clock gameClock;
