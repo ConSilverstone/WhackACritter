@@ -29,6 +29,10 @@ int main()
 
 	// Create an instance of our Critter class
 	Critter myCritter;
+	Critter secondCritter;
+	// Critter point values
+	myCritter.Setup("graphics/owl.png", 10);
+	secondCritter.Setup("graphics/parrot.png", 25);
 
 	// Game Font
 	sf::Font gameFont;
@@ -56,6 +60,7 @@ int main()
 		{
 			// Process input on critters
 			myCritter.Input(event);
+			secondCritter.Input(event);
 
 			if (event.type == sf::Event::Closed)
 			{
@@ -75,6 +80,9 @@ int main()
 		// See if there is a pending score
 		score += myCritter.GetPendingScore();
 		myCritter.ClearPendingScore();
+
+		score += secondCritter.GetPendingScore();
+		secondCritter.ClearPendingScore();
 		scoreText.setString("Score: " + std::to_string(score));
 
 		// End Update
@@ -89,6 +97,7 @@ int main()
 
 		// Draw everything
 		myCritter.Draw(gameWindow);
+		secondCritter.Draw(gameWindow);
 		gameWindow.draw(scoreText);
 
 		//Display the window contents of the screen
