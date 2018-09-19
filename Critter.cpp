@@ -15,6 +15,7 @@ Critter::Critter()
 	, m_alive(true)
 	, m_deathSound()
 	, m_deathBuffer()
+	, m_pendingScore(0)
 {
 
 
@@ -62,9 +63,23 @@ void Critter::Input(sf::Event _gameEvent)
 
 					// Play the death sound
 					m_deathSound.play();
+
+					// Added to pending score
+					m_pendingScore += 1;
 				}
 
 			} // End event is statement
 		}
 	}
+}
+
+int Critter::GetPendingScore()
+{
+	return m_pendingScore;
+}
+
+
+void Critter::ClearPendingScore() 
+{
+	m_pendingScore = 0;
 }
